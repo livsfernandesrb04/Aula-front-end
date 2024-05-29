@@ -1,56 +1,339 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+    <!-- Required meta tags-->
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="main.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+    <!-- Local CSS-->
+    <link rel="stylesheet" href="main.css" type="text/css">
+
     <title>Formulário de Triagem</title>
 </head>
 <body>
-    <h1>Formulário de Triagem</h1>
-    <form>
-        <h2>Dados pessoais</h2>
-        <div class="row mb-3">
-          <label for="inputName1" class="col-sm-2 col-form-label">Nome Completo:</label>
-          <div class="col-sm-10">
-            <input type="text" class="form-control" id="inputName1">
-          </div>
+    <form action="/pagina-processa-dados-do-form" method="post">
+        <!--Dados pessoais-->
+        <h3>DADOS PESSOAIS</h3>
+        <div class="form-group">
+            <label for="nome">Nome Completo:</label>
+            <input type="text" class="form-control" id="nome" placeholder="Nome Completo">
         </div>
-        <div class="row mb-3">
-          <label for="BirthDate1" class="col-sm-2 col-form-label">Data de nascimento:</label>
-          <div class="col-sm-10">
-            <input type="date" class="form-control" id="BirthDate1">
-          </div>
+        <div class="form-group">
+            <label for="data-de-nasc">Data de nascimento:</label>
+            <input type="date" class="form-control" id="data-de-nasc">
         </div>
+        <div class="form-group">
+            <label for="endereco">Endereço:</label>
+            <input type="text" class="form-control" id="endereco">
+        </div>
+        <!--Sinais vitais-->
+        <h3>SINAIS VITAIS</h3>
 
-        <h2>Sinais vitais</h2>
-        <div class="row mb-3">
-            <label for="BloodPressure1" class="col-sm-2 col-form-label">Pressão arterial:</label>
-            <div class="col-sm-10">
-                <input type="number" class="form-control" id="BloodPressure1">
+        <div class="row">
+            <div class="form-group ">
+                <label for="pressao-art">Pressão arterial</label>
+                <input type="number" class="form-control" id="pressao-art" placeholder="mmHg">
+            </div>
+            <div class="form-group">
+                <label for="temp">Temperatura</label>
+                <input type="number" class="form-control" id="temp" placeholder="°C">
+            </div>
+            <div class="form-group">
+                <label for="freq-card">Frequência Cardíaca</label>
+                <input type="number" class="form-control" id="freq-card">
+            </div>
+            <div class="form-group">
+                <label for="freq-resp">Frequência Respiratória</label>
+                <input type="number" class="form-control" id="freq-resp">
             </div>
         </div>
-        <div class="row mb-3">
-            <label for="Temperature1" class="col-sm-2 col-form-label">Temperatura:</label>
-            <div class="col-sm-10">
-                <input type="number" class="form-control" id="Temperature1">
+        
+
+        <!--Primeira sessão de perguntas-->
+        <h3>PRIMEIRA SESSÃO</h3>
+        <fieldset class="form-group row">
+            <label for="perda-de-consc" class="row-cols-1">O paciente se encontra desacordado?</label>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input row-cols-2" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                <label class="form-check-label" for="inlineRadio1">Sim</label>
             </div>
-        </div>
-        <div class="row mb-3">
-            <label for="Pulse1" class="col-sm-2 col-form-label">Frequência Cardíaca/Pulso:</label>
-            <div class="col-sm-10">
-                <input type="number" class="form-control" id="Pulse1">
+            <div class="form-check form-check-inline">
+                <input class="form-check-input row-cols-3" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                <label class="form-check-label" for="inlineRadio2">Não</label>
             </div>
-        </div>
-        <div class="row mb-3">
-            <label for="FrequenciaRespiratoria1" class="col-sm-2 col-form-label">Frequência Respiratória:</label>
-            <div class="col-sm-10">
-                <input type="number" class="form-control" id="FrequenciaRespiratoria1">
+        </fieldset>
+
+        <fieldset class="form-group row">
+            <label for="pulso" class="row-cols-1"><p>O paciente apresenta pulso?</p></label>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input row-cols-2" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                <label class="form-check-label" for="inlineRadio1">Sim</label>
             </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input row-cols-3" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                <label class="form-check-label" for="inlineRadio2">Não</label>
+            </div>
+        </fieldset>
+
+        <fieldset class="form-group row">
+            <label for="apneia" class="row-cols-1">O paciente apresenta apneia?</label>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input row-cols-2" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                <label class="form-check-label" for="inlineRadio1">Sim</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input row-cols-3" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                <label class="form-check-label" for="inlineRadio2">Não</label>
+            </div>
+        </fieldset>
+
+        <fieldset class="form-group row">
+            <label for="entubacao" class="row-cols-1">O paciente apresenta entubação nas vias aereas?</label>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input row-cols-2" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                <label class="form-check-label" for="inlineRadio1">Sim</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input row-cols-3" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                <label class="form-check-label" for="inlineRadio2">Não</label>
+            </div>
+        </fieldset>
+        
+        <!--Segunda sessão de perguntas-->
+        <h3>SEGUNDA SESSÃO</h3>
+        <fieldset class="form-group row">
+            <label for="perda-de-consc" class="row-cols-1">Traumatismo</label>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input row-cols-2" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                <label class="form-check-label" for="inlineRadio1">Ausente</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input row-cols-3" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                <label class="form-check-label" for="inlineRadio2">Menor</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input row-cols-4" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                <label class="form-check-label" for="inlineRadio2">Moderado</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input row-cols-5" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                <label class="form-check-label" for="inlineRadio2">Maior</label>
+            </div>
+        </fieldset>
+
+        <fieldset class="form-group row">
+            <label for="pulso" class="row-cols-1"><p>Feridas</p></label>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input row-cols-2" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                <label class="form-check-label" for="inlineRadio1">Ausente</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input row-cols-3" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                <label class="form-check-label" for="inlineRadio2">Superficial</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input row-cols-4" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                <label class="form-check-label" for="inlineRadio2">Não penetrante</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input row-cols-5" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                <label class="form-check-label" for="inlineRadio2">Extensa Profunda</label>
+            </div>
+        </fieldset>
+
+        <fieldset class="form-group row">
+            <label for="pulso" class="row-cols-1"><p>Trabalho respiratório</p></label>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input row-cols-2" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                <label class="form-check-label" for="inlineRadio1">Ausente</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input row-cols-3" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                <label class="form-check-label" for="inlineRadio2">Leve</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input row-cols-4" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                <label class="form-check-label" for="inlineRadio2">Moderado</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input row-cols-5" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                <label class="form-check-label" for="inlineRadio2">Severo</label>
+            </div>
+        </fieldset>
+
+        <fieldset class="form-group row">
+            <label for="pulso" class="row-cols-1"><p>Cianose</p></label>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input row-cols-2" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                <label class="form-check-label" for="inlineRadio1">Ausente</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input row-cols-3" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                <label class="form-check-label" for="inlineRadio2">Leve</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input row-cols-4" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                <label class="form-check-label" for="inlineRadio2">Moderada</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input row-cols-5" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                <label class="form-check-label" for="inlineRadio2">Severa</label>
+            </div>
+        </fieldset>
+
+        <fieldset class="form-group row">
+            <label for="pulso" class="row-cols-1"><p>Palidez</p></label>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input row-cols-2" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                <label class="form-check-label" for="inlineRadio1">Ausente</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input row-cols-3" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                <label class="form-check-label" for="inlineRadio2">Leve</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input row-cols-4" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                <label class="form-check-label" for="inlineRadio2">Moderada</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input row-cols-5" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                <label class="form-check-label" for="inlineRadio2">Severa</label>
+            </div>
+        </fieldset>
+
+        <fieldset class="form-group row">
+            <label for="pulso" class="row-cols-1"><p>Hemorragia</p></label>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input row-cols-2" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                <label class="form-check-label" for="inlineRadio1">Ausente</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input row-cols-3" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                <label class="form-check-label" for="inlineRadio2">Leve</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input row-cols-4" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                <label class="form-check-label" for="inlineRadio2">Moderada</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input row-cols-5" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                <label class="form-check-label" for="inlineRadio2">Severa</label>
+            </div>
+        </fieldset>
+
+        <fieldset class="form-group row">
+            <label for="pulso" class="row-cols-1"><p>Dor(Escala Analoga Visual 10/10)</p></label>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input row-cols-2" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                <label class="form-check-label" for="inlineRadio1">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input row-cols-3" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                <label class="form-check-label" for="inlineRadio2">1 a 4</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input row-cols-4" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                <label class="form-check-label" for="inlineRadio2">5 a 8</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input row-cols-5" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                <label class="form-check-label" for="inlineRadio2">9 a 10</label>
+            </div>
+        </fieldset>
+
+        <fieldset class="form-group row">
+            <label for="pulso" class="row-cols-1"><p>Intoxicação ou automutilação</p></label>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input row-cols-2" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                <label class="form-check-label" for="inlineRadio1">Ausente</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input row-cols-3" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                <label class="form-check-label" for="inlineRadio2">Duvidosa</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input row-cols-4" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                <label class="form-check-label" for="inlineRadio2">Evidente</label>
+            </div>
+        </fieldset>
+
+        <fieldset class="form-group row">
+            <label for="pulso" class="row-cols-1"><p>Convulsões</p></label>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input row-cols-2" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                <label class="form-check-label" for="inlineRadio1">Ausente</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input row-cols-3" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                <label class="form-check-label" for="inlineRadio2">Edo</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input row-cols-4" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                <label class="form-check-label" for="inlineRadio2">Presente</label>
+            </div>
+        </fieldset>
+
+        <fieldset class="form-group row">
+            <label for="pulso" class="row-cols-1"><p>Escala de Glasglow</p></label>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input row-cols-2" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                <label class="form-check-label" for="inlineRadio1">15</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input row-cols-3" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                <label class="form-check-label" for="inlineRadio2">14 a 12</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input row-cols-4" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                <label class="form-check-label" for="inlineRadio2">11 a 8</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input row-cols-5" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                <label class="form-check-label" for="inlineRadio2">Menor que 8</label>
+            </div>
+        </fieldset>
+
+        <fieldset class="form-group row">
+            <label for="pulso" class="row-cols-1"><p>Desidratação</p></label>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input row-cols-2" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                <label class="form-check-label" for="inlineRadio1">Ausente</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input row-cols-3" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                <label class="form-check-label" for="inlineRadio2">Leve</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input row-cols-4" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                <label class="form-check-label" for="inlineRadio2">Moderada</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input row-cols-5" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                <label class="form-check-label" for="inlineRadio2">Severa</label>
+            </div>
+        </fieldset>
+
+        <fieldset class="form-group row">
+            <label for="pulso" class="row-cols-1"><p>Psicose, agitação ou violência</p></label>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input row-cols-2" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                <label class="form-check-label" for="inlineRadio1">Ausente</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input row-cols-3" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                <label class="form-check-label" for="inlineRadio2">Presente</label>
+            </div>
+        </fieldset>
+
+
+        <!--Botão final-->
+        <div class="button">
+            <button type="submit">Enviar</button>
         </div>
 
     </form>
-        
 </body>
 </html>
